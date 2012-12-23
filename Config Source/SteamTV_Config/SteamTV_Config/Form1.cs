@@ -21,14 +21,25 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Ini;
 
 namespace SteamTV_Config
 {
     public partial class Config : Form
     {
+        private IniFile config = new IniFile(Path.GetDirectoryName(Application.ExecutablePath) + "/configs.ini");
         public Config()
         {
             InitializeComponent();
+            try
+            {
+                this.SteamDirectory.Text = config.IniReadValue("SteamConfigs", "SteamPath");
+                this.SteamUsername.Text = config.IniReadValue("SteamConfigs", "SteamUsername");
+                this.SteamPassword.Text = config.IniReadValue("Steamconfigs", "SteamPassword");
+            }
+            catch
+            {
+            }
         }
 
         private void SelectSteamDirectory(object sender, EventArgs e)
@@ -41,14 +52,9 @@ namespace SteamTV_Config
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Compose a string that consists of three lines.
-            string lines = "Test";
-
-            // Write the string to a file.
-            System.IO.StreamWriter file = new System.IO.StreamWriter("test.txt");
-            file.WriteLine(lines);
-
-            file.Close();
+          config.IniWriteValue("SteamConfigs", "SteamPath", this.SteamDirectory.Text);
+          config.IniWriteValue("SteamConfigs", "SteamUsername", this.SteamUsername.Text);
+          config.IniWriteValue("SteamConfigs", "SteamPassword", this.SteamPassword.Text);
         }
 
     }
