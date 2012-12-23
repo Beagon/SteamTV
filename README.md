@@ -16,3 +16,15 @@ This is an application will make your PC/Laptop a Steam Gaming hub.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	
+	
+Instructions:
+Just open SteamTV.exe and it should get you to the configurations, once that's done make a shortcut of SteamTV.exe to "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup".
+
+
+
+
+Todo:
+
+Make a installer
+Add some more functions.

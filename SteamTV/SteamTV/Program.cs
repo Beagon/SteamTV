@@ -26,10 +26,9 @@ namespace SteamTV
 {
    public class Program
     {
+
         public static IniFile config = new IniFile(AppDomain.CurrentDomain.BaseDirectory + "/configs.ini");
         public static ProcessMethods process = new ProcessMethods();
-        private static string Username = config.IniReadValue("SteamConfigs", "SteamUsername");
-        private static string Password = config.IniReadValue("SteamConfigs", "SteamPassword");
 
         static public void Tick(Object stateInfo)
         {
@@ -52,6 +51,16 @@ namespace SteamTV
 
         static void Main(string[] args)
         {
+            if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/configs.ini"))
+            {
+                Process.Start("SteamTV_Config.exe");
+                return;
+            }
+            string Username = config.IniReadValue("SteamConfigs", "SteamUsername");
+            string Password = config.IniReadValue("SteamConfigs", "SteamPassword");
+
+
+
             if (Convert.ToBoolean(config.IniReadValue("TVConfigs", "Explorer")))
             {
                 Console.WriteLine("Configuration set to close explorer, closing.");
