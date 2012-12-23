@@ -45,16 +45,16 @@ namespace SteamTV_Config
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Config));
             this.label1 = new System.Windows.Forms.Label();
             this.SteamConfig = new System.Windows.Forms.GroupBox();
+            this.SteamPassword = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.Label();
+            this.SteamUsername = new System.Windows.Forms.TextBox();
+            this.Username = new System.Windows.Forms.Label();
             this.BrowseFile = new System.Windows.Forms.Button();
             this.SteamDirectory = new System.Windows.Forms.TextBox();
             this.TVConfig = new System.Windows.Forms.GroupBox();
-            this.BrowseSteamFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.Username = new System.Windows.Forms.Label();
-            this.SteamUsername = new System.Windows.Forms.TextBox();
-            this.SteamPassword = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.BrowseSteamFolder = new System.Windows.Forms.FolderBrowserDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.SteamConfig.SuspendLayout();
             this.TVConfig.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,40 @@ namespace SteamTV_Config
             this.SteamConfig.TabStop = false;
             this.SteamConfig.Text = "Steam Configurations";
             // 
+            // SteamPassword
+            // 
+            this.SteamPassword.Location = new System.Drawing.Point(7, 123);
+            this.SteamPassword.Name = "SteamPassword";
+            this.SteamPassword.Size = new System.Drawing.Size(172, 20);
+            this.SteamPassword.TabIndex = 6;
+            this.SteamPassword.UseSystemPasswordChar = true;
+            // 
+            // Password
+            // 
+            this.Password.AutoSize = true;
+            this.Password.Location = new System.Drawing.Point(6, 107);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(56, 13);
+            this.Password.TabIndex = 5;
+            this.Password.Text = "Password:";
+            // 
+            // SteamUsername
+            // 
+            this.SteamUsername.Location = new System.Drawing.Point(7, 84);
+            this.SteamUsername.Name = "SteamUsername";
+            this.SteamUsername.Size = new System.Drawing.Size(172, 20);
+            this.SteamUsername.TabIndex = 4;
+            this.SteamUsername.Text = "Steam Username";
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(6, 68);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(58, 13);
+            this.Username.TabIndex = 3;
+            this.Username.Text = "Username:";
+            // 
             // BrowseFile
             // 
             this.BrowseFile.Location = new System.Drawing.Point(126, 30);
@@ -111,43 +145,18 @@ namespace SteamTV_Config
             this.TVConfig.TabStop = false;
             this.TVConfig.Text = "Steam TV Settings";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Placeholder for Steam TV Functions";
+            // 
             // BrowseSteamFolder
             // 
             this.BrowseSteamFolder.ShowNewFolderButton = false;
-            // 
-            // Username
-            // 
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(6, 68);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(58, 13);
-            this.Username.TabIndex = 3;
-            this.Username.Text = "Username:";
-            // 
-            // SteamUsername
-            // 
-            this.SteamUsername.Location = new System.Drawing.Point(7, 84);
-            this.SteamUsername.Name = "SteamUsername";
-            this.SteamUsername.Size = new System.Drawing.Size(172, 20);
-            this.SteamUsername.TabIndex = 4;
-            this.SteamUsername.Text = "Steam Username";
-            // 
-            // SteamPassword
-            // 
-            this.SteamPassword.Location = new System.Drawing.Point(7, 123);
-            this.SteamPassword.Name = "SteamPassword";
-            this.SteamPassword.Size = new System.Drawing.Size(172, 20);
-            this.SteamPassword.TabIndex = 6;
-            this.SteamPassword.UseSystemPasswordChar = true;
-            // 
-            // Password
-            // 
-            this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(6, 107);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(56, 13);
-            this.Password.TabIndex = 5;
-            this.Password.Text = "Password:";
             // 
             // button1
             // 
@@ -157,15 +166,7 @@ namespace SteamTV_Config
             this.button1.TabIndex = 3;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Placeholder for Steam TV Functions";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Config
             // 

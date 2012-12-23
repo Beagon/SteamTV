@@ -39,5 +39,17 @@ namespace SteamTV_Config
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Compose a string that consists of three lines.
+            string lines = "Test";
+
+            // Write the string to a file.
+            System.IO.StreamWriter file = new System.IO.StreamWriter("test.txt");
+            file.WriteLine(lines);
+
+            file.Close();
+        }
+
     }
 }
