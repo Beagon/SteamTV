@@ -15,7 +15,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.ComponentModel;
 
 namespace Processes
 {
@@ -33,7 +35,6 @@ namespace Processes
                 return false;
             }
         }
-
 
         public bool CloseProcess(string name)
         {

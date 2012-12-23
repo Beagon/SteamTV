@@ -20,12 +20,12 @@ using System.IO;
 using Ini;
 using System.Diagnostics;
 using Processes;
+using System.Runtime.InteropServices;
 
 namespace SteamTV
 {
    public class Program
     {
-
         public static IniFile config = new IniFile(AppDomain.CurrentDomain.BaseDirectory + "/configs.ini");
         public static ProcessMethods process = new ProcessMethods();
         private static string Username = config.IniReadValue("SteamConfigs", "SteamUsername");
@@ -52,11 +52,22 @@ namespace SteamTV
 
         static void Main(string[] args)
         {
+            if (Convert.ToBoolean(config.IniReadValue("TVConfigs", "Explorer")))
+            {
+                Console.WriteLine("Configuration set to close explorer, closing.");
+                ProcessStartInfo taskKill = new ProcessStartInfo("taskkill", "/F /IM explorer.exe");
+                taskKill.WindowStyle = ProcessWindowStyle.Hidden;
+                Process Explorerprocess = new Process();
+                Explorerprocess.StartInfo = taskKill;
+                Explorerprocess.Start();
+                System.Threading.Thread.Sleep(2000);
+            }
+
             if (process.IsProcessOpen("steam"))
             {
                 Console.WriteLine("Steam is open, closing steam.");
                 process.CloseProcess("steam");
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(2000);
             }
             
              if (!process.IsProcessOpen("steam"))
@@ -68,9 +79,10 @@ namespace SteamTV
                 Process.Start(startInfo);
 
             }
-                     System.Threading.Thread.Sleep(1000);
-                     TimerCallback callback = new TimerCallback(Tick);
-                     Timer stateTimer = new Timer(callback, null, 0, 1000);
+
+                System.Threading.Thread.Sleep(1000);
+                TimerCallback callback = new TimerCallback(Tick);
+                Timer stateTimer = new Timer(callback, null, 0, 1000);
              for (; ; ) { }
         }
     }

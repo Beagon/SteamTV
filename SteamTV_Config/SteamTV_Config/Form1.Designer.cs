@@ -52,9 +52,10 @@ namespace SteamTV_Config
             this.BrowseFile = new System.Windows.Forms.Button();
             this.SteamDirectory = new System.Windows.Forms.TextBox();
             this.TVConfig = new System.Windows.Forms.GroupBox();
+            this.TVSteamShutdown = new System.Windows.Forms.CheckBox();
             this.BrowseSteamFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.button1 = new System.Windows.Forms.Button();
-            this.TVSteamShutdown = new System.Windows.Forms.CheckBox();
+            this.TVSteamExplorer = new System.Windows.Forms.CheckBox();
             this.SteamConfig.SuspendLayout();
             this.TVConfig.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +137,7 @@ namespace SteamTV_Config
             // 
             // TVConfig
             // 
+            this.TVConfig.Controls.Add(this.TVSteamExplorer);
             this.TVConfig.Controls.Add(this.TVSteamShutdown);
             this.TVConfig.Location = new System.Drawing.Point(209, 12);
             this.TVConfig.Name = "TVConfig";
@@ -143,6 +145,16 @@ namespace SteamTV_Config
             this.TVConfig.TabIndex = 2;
             this.TVConfig.TabStop = false;
             this.TVConfig.Text = "Steam TV Settings";
+            // 
+            // TVSteamShutdown
+            // 
+            this.TVSteamShutdown.AutoSize = true;
+            this.TVSteamShutdown.Location = new System.Drawing.Point(17, 19);
+            this.TVSteamShutdown.Name = "TVSteamShutdown";
+            this.TVSteamShutdown.Size = new System.Drawing.Size(164, 17);
+            this.TVSteamShutdown.TabIndex = 0;
+            this.TVSteamShutdown.Text = "Shutdown computer on close";
+            this.TVSteamShutdown.UseVisualStyleBackColor = true;
             // 
             // BrowseSteamFolder
             // 
@@ -158,15 +170,15 @@ namespace SteamTV_Config
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TVSteamShutdown
+            // TVSteamExplorer
             // 
-            this.TVSteamShutdown.AutoSize = true;
-            this.TVSteamShutdown.Location = new System.Drawing.Point(17, 19);
-            this.TVSteamShutdown.Name = "TVSteamShutdown";
-            this.TVSteamShutdown.Size = new System.Drawing.Size(164, 17);
-            this.TVSteamShutdown.TabIndex = 0;
-            this.TVSteamShutdown.Text = "Shutdown computer on close";
-            this.TVSteamShutdown.UseVisualStyleBackColor = true;
+            this.TVSteamExplorer.AutoSize = true;
+            this.TVSteamExplorer.Location = new System.Drawing.Point(17, 42);
+            this.TVSteamExplorer.Name = "TVSteamExplorer";
+            this.TVSteamExplorer.Size = new System.Drawing.Size(180, 17);
+            this.TVSteamExplorer.TabIndex = 1;
+            this.TVSteamExplorer.Text = "Kill Windows Explorer on launch.";
+            this.TVSteamExplorer.UseVisualStyleBackColor = true;
             // 
             // Config
             // 
@@ -203,6 +215,7 @@ namespace SteamTV_Config
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox TVSteamShutdown;
+        private System.Windows.Forms.CheckBox TVSteamExplorer;
     }
 }
 

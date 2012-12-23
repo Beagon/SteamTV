@@ -37,6 +37,7 @@ namespace SteamTV_Config
                 this.SteamUsername.Text = config.IniReadValue("SteamConfigs", "SteamUsername");
                 this.SteamPassword.Text = config.IniReadValue("Steamconfigs", "SteamPassword");
                 this.TVSteamShutdown.Checked = Convert.ToBoolean(config.IniReadValue("TVConfigs", "Shutdown"));
+                this.TVSteamExplorer.Checked = Convert.ToBoolean(config.IniReadValue("TVConfigs", "Explorer"));
             }
             catch
             {
@@ -57,6 +58,8 @@ namespace SteamTV_Config
           config.IniWriteValue("SteamConfigs", "SteamUsername", this.SteamUsername.Text);
           config.IniWriteValue("SteamConfigs", "SteamPassword", this.SteamPassword.Text);
           config.IniWriteValue("TVConfigs", "Shutdown", this.TVSteamShutdown.Checked.ToString());
+          config.IniWriteValue("TVConfigs", "Explorer", this.TVSteamExplorer.Checked.ToString());
+          MessageBox.Show("Configurations saved.");
         }
 
     }
