@@ -22,3 +22,6 @@ Config Source/SteamTV_Config/SteamTV_Config/bin/
 Config Source/SteamTV_Config/SteamTV_Config/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
 Config Source/SteamTV_Config/SteamTV_Config/obj/
 Config Source/SteamTV/SteamTV/obj/
+Config Source/SteamTV/SteamTV/Release
+Config Source/SteamTV/SteamTV/Debug
+Config Source/SteamTV/SteamTV/bin
