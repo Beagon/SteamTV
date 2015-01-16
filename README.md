@@ -1,6 +1,7 @@
 SteamTV by Thunderofnl
 =======
-
+THIS WAS MADE WHEN STEAM JUST RELEASED THE TV MODE!
+=======
 This is an application will make your PC/Laptop a Steam Gaming hub.
  
 
